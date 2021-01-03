@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水印</title>
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 2;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0px;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav ul li b {
+            float: right;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        nav li b:hover {
+            color: #000;
+        }
+
+        #cover {
+            text-align: center; /*让div内部文字居中*/
+            border-radius: 50px;
+            width: 1000px;
+            height: 3000px;
+            margin: auto;
+            position: absolute;
+            top: 2800px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 10px 10px 5px #000000;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Index.html" title="首页" target="_blank">首页</a></li>
+    </ul>
+    <ul>
+        <li><b title="请先登录" target="_blank">请您首先登录，谢谢</b></li>
+    </ul>
+</nav>
+<h1 style="text-align: center;font-size: 60px">水印</h1>
+<div id="cover">
+    <h1>原图</h1>
+    <canvas id="original" , width="800" , height="660"></canvas>
+    <h1>水印内容</h1>
+    <canvas id="content" , width="800" , height="660"></canvas>
+    <h1>可见水印</h1>
+    <canvas id="visible" , width="800" , height="660"></canvas>
+    <h1>不可见水印</h1>
+    <canvas id="hidden" , width="800" , height="660"></canvas>
+</div>
+
+</body>
+<script>
+
+</script>
+<script type="text/javascript">
+
+    (function () {
+        function origin_pic() {
+            var canvas = document.getElementById("original");
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = "./pics/nanjing.jpg";
+        }
+        function watermark_content_pic() {
+            var canvas = document.getElementById("content");
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                const text = "南京大学软件学院";
+                ctx.font = "40px 黑体";
+                ctx.textAlign = "center";
+                ctx.fillStyle = "red";
+                ctx.globalAlpha = 1;
+                ctx.fillText(text, canvas.width-500, canvas.height-500);
+            };
+            img.src = "./pics/black.jpeg";
+        }
+        function visible_watermark_pic() {
+            var canvas = document.getElementById("visible");
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                const text = "南京大学软件学院";
+                ctx.font = "40px 黑体";
+                ctx.textAlign = "center";
+                ctx.fillStyle = "red";
+                ctx.globalAlpha = 0.5;
+                ctx.fillText(text, canvas.width-500, canvas.height-500);
+            };
+            img.src = "./pics/nanjing.jpg";
+        }
+        function hidden_watermark_pic() {
+            var canvas = document.getElementById("hidden");
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                var originPic = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const text = "南京大学软件学院";
+                ctx.font = "40px 黑体";
+                ctx.textAlign = "center";
+                ctx.fillStyle = "red";
+                ctx.globalAlpha = 0.5;
+                ctx.fillText(text, canvas.width-500, canvas.height-500);
+                var newPic = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                makeHidden(originPic, newPic, ctx);
+            };
+            img.src = "./pics/nanjing.jpg";
+        }
+
+        function makeHidden(originPic, newPic, ctx) {
+            for (var i = 0; i < originPic.data.length; i++) {
+                if (i % 4 === 0) {
+                    if (newPic[i] !== originPic.data[i]) {
+                        if (originPic.data[i] % 2 !== 0) {
+                            if (originPic.data[i] === 255) {
+                                originPic.data[i]--;
+                            } else originPic.data[i]++;
+                        }
+                    } else {
+                        if (originPic.data[i] % 2 === 0) originPic.data[i]++;
+                    }
+                }
+            }
+            ctx.putImageData(originPic, 0, 0);
+        }
+
+        window.origin_pic = origin_pic;
+        window.watermark_content_pic = watermark_content_pic;
+        window.visible_watermark_pic = visible_watermark_pic;
+        window.hidden_watermark_pic = hidden_watermark_pic;
+    })();
+
+    origin_pic({});
+    watermark_content_pic({});
+    visible_watermark_pic({});
+    hidden_watermark_pic({});
+</script>
+</html>

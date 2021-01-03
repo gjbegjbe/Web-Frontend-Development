@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 2;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0px;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav ul li b {
+            float: right;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        nav li b:hover {
+            color: #000;
+        }
+
+        #cover {
+            text-align: center; /*让div内部文字居中*/
+            border-radius: 50px;
+            width: 270px;
+            height: 370px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 10px 10px 5px #000000;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #text {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        #usernameicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #username {
+            margin-top: 20px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #passwordicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #password {
+            margin-top: 5px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #verifyicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #verifycode {
+            margin-top: 5px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #signin {
+            margin-top: 20px;
+            border: none;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #CCCCCC;
+            width: 20%;
+            padding: 10px 0px;
+            font-weight: bolder;
+        }
+
+        #signup {
+            margin-top: 20px;
+            border: none;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #CCCCCC;
+            width: 50%;
+            padding: 10px 0px;
+            font-weight: bolder;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Index.html" title="首页" target="_blank">首页</a></li>
+    </ul>
+    <ul>
+        <li><b title="请先登录" target="_blank">请您首先登录，谢谢</b></li>
+    </ul>
+</nav>
+<div id="cover">
+    <div id="text">
+        登录
+    </div>
+    <div>
+        <img id="usernameicon" src="./icons/signin.png">
+        <input type="text" id="username" value="" placeholder="用户名"/>
+        <br>
+        <img id="passwordicon" src="./icons/passwd.png">
+        <input type="password" id="password" value="" placeholder="密码"/>
+        <br>
+        <br>
+        <div id="verify" style="width: 20%;display: table-cell;vertical-align: middle;text-align: center;"></div>
+        <img id="verifyicon" src="./icons/verify.png">
+        <input type="text" id="verifycode" value="" placeholder="验证码"/>
+        <br>
+        <button type="button" id="signin">登录</button>
+        <button type="button" id="signup"><a href="SignUp.html" style="text-decoration: none;color: #000000">没有账号？</a>
+        </button>
+    </div>
+    <script src="./js/jquery_min.js"></script>
+    <script src="./js/crypto_min.js"></script>
+    <script src="./js/sha256.js"></script>
+    <script src="./js/gVerify.js"></script>
+</div>
+</body>
+
+<script type="text/javascript">
+    var verifyCode = new GVerify("verify");
+    document.getElementById("signin").addEventListener('click', function (e) {
+        e.preventDefault()
+        const phone = document.getElementById('username').value
+        const password = document.getElementById('password').value
+
+        var res = verifyCode.validate(document.getElementById("verifycode").value);
+        if (!res) {
+            alert("验证码错误");
+            return 0;
+        }
+
+        $.post('/signin', {'phone': phone, 'password': toSHA256(password)}, function (res) {
+            if (res.success) {
+                window.location = '/index'
+            } else {
+                alert(res.msg)
+            }
+        })
+    })
+
+
+</script>
+
+</html>

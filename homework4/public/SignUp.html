@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 2;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0px;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav ul li b {
+            float: right;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        nav li b:hover {
+            color: #000;
+        }
+
+        #cover {
+            text-align: center; /*让div内部文字居中*/
+            border-radius: 50px;
+            width: 270px;
+            height: 370px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 10px 10px 5px #000000;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #text {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        #usernameicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #username {
+            margin-top: 20px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #phoneicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #phone {
+            margin-top: 5px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #passwordicon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #password {
+            margin-top: 5px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #password1icon {
+            margin-top: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #password1 {
+            margin-top: 5px;
+            outline-style: none;
+            border: 0;
+            border-bottom: 2px solid #000;
+            background: #ffffff00;
+            padding: 13px 14px;
+            width: 60%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #signup {
+            margin-top: 20px;
+            border: none;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #CCCCCC;
+            width: 20%;
+            padding: 10px 0px;
+            font-weight: bolder;
+        }
+
+        #exitsignup {
+            margin-top: 20px;
+            border: none;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #CCCCCC;
+            width: 50%;
+            padding: 10px 0px;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Index.html" title="首页" target="_blank">首页</a></li>
+    </ul>
+    <ul>
+        <li><b title="请先登录" target="_blank">请您首先登录，谢谢</b></li>
+    </ul>
+</nav>
+<div id="cover">
+    <div id="text">
+        注册
+    </div>
+    <div>
+        <img id="usernameicon" src="./icons/signin.png">
+        <input type="text" id="username" value="" placeholder="用户名"/>
+        <br>
+        <img id="phoneicon" src="./icons/phone.png">
+        <input type="text" id="phone" value="" placeholder="手机号"/>
+        <br>
+        <img id="passwordicon" src="./icons/passwd.png">
+        <input type="password" id="password" value="" placeholder="密码"/>
+        <br>
+        <img id="password1icon" src="./icons/confirm.png">
+        <input type="password" id="password1" value="" placeholder="再次输入密码"/>
+        <br>
+        <button type="button" id="signup">注册</button>
+        <button type="button" id="exitsignup"><a href="/signin" style="text-decoration: none;color: #000000">取消注册</a>
+        </button>
+    </div>
+    <script src="./js/jquery_min.js"></script>
+    <script src="./js/crypto_min.js"></script>
+    <script src="./js/sha256.js"></script>
+</div>
+</body>
+
+<script type="text/javascript">
+
+    document.getElementById('signup').addEventListener('click', function (e) {
+        e.preventDefault()
+        const username = document.getElementById('username').value
+        const phone = document.getElementById('phone').value
+        const password = document.getElementById('password').value
+        const password1 = document.getElementById('password1').value
+
+        var tmp = username && phone && password && password1;
+        if (tmp === "") {
+            alert("请填写完整信息");
+            return 0;
+        }
+
+        if (username.length < 6 || username.length > 16) {
+            alert("用户名长度为：6-16位");
+            return 0;
+        }
+
+        const re = /^\d{11}$/
+        if (!re.test(phone)) {
+            alert("请输入11位电话号码")
+            return 0;
+        }
+
+        if (password < 6 || password1 < 6) {
+            alert("密码长度错误");
+            return 0;
+        } else if (password === password1) {
+            alert("用户名:" + username + "\n" + "密码:" + password);
+        } else {
+            alert("两次输入的密码不一样");
+            return 0;
+        }
+
+        $.post('/signup', {
+            'username': username,
+            'phone': phone,
+            'password': toSHA256(password),
+            'password1': toSHA256(password1)
+        }, function (res) {
+            if (res.success) {
+                window.location = '/index'
+            } else {
+                alert(res.msg)
+            }
+        })
+    })
+</script>
+
+</html>

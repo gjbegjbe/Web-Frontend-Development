@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <SCRIPT src="./js/jquery.js" type=text/javascript></SCRIPT>
+    <SCRIPT src="./js/jquery.lazyload.min.js" type=text/javascript></SCRIPT>
+
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $("img").lazyload({
+                placeholder: "./pics/loading.gif",
+                effect: "fadeIn",//加载的效果
+                threshold: -100,//距离多少开始加载
+            });
+        });
+    </script>
+
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/back.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 3;
+            position: fixed;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li1 {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav ul li1 a {
+            float: right;
+            margin-right: 600px;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        #usernameicon1 {
+            float: right;
+            margin-top: 11px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #id {
+            float: right;
+            position: fixed;
+            text-align: right;
+            right: 10px;
+            top: 10px;
+        }
+
+        #adver {
+            float: right;
+            width: 200px;
+            background: #fefefe;
+            border: 10px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            margin: 60px 0 auto 0;
+            text-align: center;
+        }
+
+        #cover {
+            position: absolute;
+            float: left;
+            background: #fefefe;
+            border: 2px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            width: 800px;
+            margin: 0 0 auto 0;
+            text-align: center;
+        }
+
+        #columns {
+            column-width: 600px;
+            column-gap: 15px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        div#columns figure {
+            background: #fefefe;
+            border: 2px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            margin: 0 2px 15px;
+            padding: 15px;
+            padding-bottom: 10px;
+            transition: opacity .4s ease-in-out;
+            column-break-inside: avoid;
+            display: inline-block;
+        }
+
+        div#columns figure img {
+            width: 600px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        div#columns:hover figure:not(:hover) {
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a style="color: white" title="首页" target="_blank">首页</a></li>
+        <li><a href="#" title="国内热门" target="_blank">国内热门</a></li>
+        <li><a href="#" title="国外热门" target="_blank">国外热门</a></li>
+        <li><a href="#" title="周边游" target="_blank">周边游</a></li>
+        <li><a href="#" title="酒店" target="_blank">酒店</a></li>
+        <li><a href="#" title="机票" target="_blank">机票</a></li>
+    </ul>
+    <ul>
+
+        <li1><a href="Profile.html" title="个人资料" target="_blank">个人资料</a></li1>
+        <li1><img id="usernameicon1" src="./icons/signin.png"></li1>
+    </ul>
+</nav>
+<img src="./pics/head.jpg" style="width: 100%" alt>
+<div id="container">
+    <div id="cover">
+        <br>
+        <div id="columns">
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/beijing.jpg" alt>
+                    <figcaption>北京</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/shanghai.jpg" alt>
+                    <figcaption>上海</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/macao.jpg" alt>
+                    <figcaption>澳门</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/chongqing.jpg" alt>
+                    <figcaption>重庆</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/nanjing.jpg" alt>
+                    <figcaption>南京</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/guangzhou.jpg" alt>
+                    <figcaption>广州</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/shenzhen.jpg" alt>
+                    <figcaption>深圳</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/hongkong.jpg" alt>
+                    <figcaption>香港</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/chengdu.jpg" alt>
+                    <figcaption>成都</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/urumqi.jpg" alt>
+                    <figcaption>乌鲁木齐</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/lhasa.jpg" alt>
+                    <figcaption>拉萨</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/xian.jpg" alt>
+                    <figcaption>西安</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/changsha.jpg" alt>
+                    <figcaption>长沙</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/hangzhou.jpg" alt>
+                    <figcaption>杭州</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/tianjin.jpg" alt>
+                    <figcaption>天津</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/wuhan.jpg" alt>
+                    <figcaption>武汉</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/taiyuan.jpg" alt>
+                    <figcaption>太原</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/nanning.jpg" alt>
+                    <figcaption>南宁</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/fuzhou.jpg" alt>
+                    <figcaption>福州</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/nanchang.jpeg" alt>
+                    <figcaption>南昌</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/hefei.jpg" alt>
+                    <figcaption>合肥</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/jinan.jpg" alt>
+                    <figcaption>济南</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/shijiazhuang.jpg" alt>
+                    <figcaption>石家庄</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/guiyang.jpg" alt>
+                    <figcaption>贵阳</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/kunming.jpg" alt>
+                    <figcaption>昆明</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/yinchuan.jpg" alt>
+                    <figcaption>银川</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/hohhot.jpg" alt>
+                    <figcaption>呼和浩特</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/harbin.jpg" alt>
+                    <figcaption>哈尔滨</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/changchun.jpg" alt>
+                    <figcaption>长春</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/shenyang.jpg" alt>
+                    <figcaption>沈阳</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/taipei.jpg" alt>
+                    <figcaption>台北</figcaption>
+                </figure>
+            </a>
+            <a href="Detail.html">
+                <figure>
+                    <img data-original="./pics/zhengzhou.png" alt>
+                    <figcaption>郑州</figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div id="id">
+        <img id="adver" src="./pics/advertisement.jpg">
+    </div>
+</div>
+</body>
+</html>

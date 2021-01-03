@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人资料</title>
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/back.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 3;
+            position: fixed;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+
+        nav ul li1 a {
+            float: right;
+            margin-right: 600px;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        #usernameicon1 {
+            float: right;
+            margin-top: 11px;
+            width: 20px;
+            height: 20px;
+        }
+
+        div#columns figure {
+            background: #fefefe;
+            border: 2px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            margin: 0 2px 15px;
+            padding: 15px;
+            padding-bottom: 10px;
+            transition: opacity .4s ease-in-out;
+            column-break-inside: avoid;
+            display: inline-block;
+        }
+
+        div#columns figure img {
+            width: 600px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        div#columns figure video {
+            width: 600px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        div#columns figure figcaption {
+            font-size: 80px;
+            font-weight: bolder;
+            text-align: left;
+        }
+
+        div#columns:hover figure:not(:hover) {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 0 24px 0;
+            margin: 0 auto;
+            -webkit-box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 1366px) {
+            .container {
+                width: 1116px;
+            }
+        }
+
+        @media screen and (min-width: 1366px) {
+            .container {
+                width: 1366px;
+            }
+        }
+
+        .clearfix:after {
+            position: relative;
+            content: '.';
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+
+        aside {
+            position: sticky;
+            top: 50px;
+            width: 300px;
+            background: #fefefe;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            height: 530px;
+            text-align: center;
+        }
+
+        main {
+            top: 50px;
+            background: #fefefe;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            height: 1550px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1366px) {
+            .container main {
+                width: 760px;
+            }
+        }
+
+        @media screen and (min-width: 1366px) {
+            .container main {
+                width: 1010px;
+            }
+        }
+
+        #photo {
+            width: 280px;
+            margin-top: 10px;
+            display: inline-block;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        #divider1 {
+            width: 280px;
+            background-color: white;
+            display: inline-block;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        .divider1 {
+            width: 700px;
+            background-color: white;
+            display: inline-block;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Index.html" title="首页" target="_blank">首页</a></li>
+        <li><a href="#" title="国内热门" target="_blank">国内热门</a></li>
+        <li><a href="#" title="国外热门" target="_blank">国外热门</a></li>
+        <li><a href="#" title="周边游" target="_blank">周边游</a></li>
+        <li><a href="#" title="酒店" target="_blank">酒店</a></li>
+        <li><a href="#" title="机票" target="_blank">机票</a></li>
+    </ul>
+    <ul>
+        <li1><a style="color: white" title="个人资料" target="_blank">个人资料</a></li1>
+        <li1><img id="usernameicon1" src="./icons/signin.png"></li1>
+    </ul>
+</nav>
+<br>
+<br>
+<div class="container clearfix">
+    <aside style="float: left">
+        <img src="./icons/profile.jpg" id="photo" alt>
+        <br>
+        <b>用户0</b>
+        <p></p>
+        <b>等级：</b>LV5<p></p>
+        注册于2020年12月1日
+        <div id="divider1"></div>
+        <br>
+        个人荣誉<p></p>
+        <img src="./icons/yellow.png" style="width: 30px;height: 30px;">
+        <img src="./icons/yellow.png" style="width: 30px;height: 30px;">
+        <img src="./icons/yellow.png" style="width: 30px;height: 30px;">
+        <img src="./icons/black.png" style="width: 30px;height: 30px;">
+        <img src="./icons/black.png" style="width: 30px;height: 30px;">
+    </aside>
+    <main style="float: right">
+        <br>
+        <b style="font-size: 20px">我的收藏</b>
+        <br>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏0</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容0</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏1</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容1</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏2</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容2</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏3</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容3</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏4</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容4</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏5</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容5</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏6</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容6</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏7</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容7</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏8</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容8</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏9</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容9</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏10</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容10</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏11</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容11</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏12</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容12</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏13</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容13</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏14</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容14</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏15</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容15</b>
+        <div class="divider1"></div>
+        <a href="Detail.html"
+           style="font-weight:bolder;font-size: 20px;float: left;margin-left: 50px;color: #000;text-decoration: none;">我的收藏16</a>
+        <p></p>
+        <br>
+        <b style="float: left;margin-left: 50px;color: #aaaaaa">内容16</b>
+        <div class="divider1"></div>
+        <p style="color: #aaaaaa">已经到底了</p>
+    </main>
+</div>
+</body>
+</html>

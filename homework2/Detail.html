@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>南京-详情页面</title>
+    <link rel="shortcut icon" href="./icons/icon.ico">
+    <style type="text/css">
+        body {
+            background: url("./pics/back.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 0;
+        }
+
+        nav {
+            z-index: 3;
+            position: fixed;
+            display: flex;
+            height: 40px;
+            background: #AAAAAA;
+            margin: -10px -8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            float: left;
+            margin: 0;
+            padding: 0 0 0 0;
+            width: 920px;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            float: left;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav ul li1 a {
+            float: right;
+            margin-right: 600px;
+            padding: 11px 20px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            background: #00000000 center right no-repeat;
+            color: #000;
+            font-weight: bolder;
+            outline: none;
+        }
+
+        nav li a:hover {
+            color: #fff;
+        }
+
+        #usernameicon1 {
+            float: right;
+            margin-top: 11px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #id {
+            float: right;
+            position: fixed;
+            text-align: right;
+            right: 10px;
+            top: 10px;
+        }
+
+
+        #adver {
+            float: right;
+            width: 200px;
+            background: #fefefe;
+            border: 10px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            margin: 60px 0 auto 0;
+            text-align: center;
+        }
+
+        #cover {
+            position: absolute;
+            float: left;
+            background: #fefefe;
+            border: 2px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            width: 800px;
+            margin: 0 0 auto 0;
+            text-align: center;
+        }
+
+        #columns {
+            column-width: 600px;
+            column-gap: 15px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        div#columns figure {
+            background: #fefefe;
+            border: 2px solid #fcfcfc;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+            margin: 0 2px 15px;
+            padding: 15px;
+            padding-bottom: 10px;
+            transition: opacity .4s ease-in-out;
+            column-break-inside: avoid;
+            display: inline-block;
+        }
+
+        div#columns figure img {
+            width: 600px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        div#columns figure video {
+            width: 600px;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        div#columns figure figcaption {
+            font-size: 80px;
+            font-weight: bolder;
+            text-align: left;
+        }
+
+        div#columns:hover figure:not(:hover) {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Index.html" title="首页" target="_blank">首页</a></li>
+        <li><a href="#" title="国内热门" target="_blank">国内热门</a></li>
+        <li><a href="#" title="国外热门" target="_blank">国外热门</a></li>
+        <li><a href="#" title="周边游" target="_blank">周边游</a></li>
+        <li><a href="#" title="酒店" target="_blank">酒店</a></li>
+        <li><a href="#" title="机票" target="_blank">机票</a></li>
+    </ul>
+    <ul>
+        <li1><a href="Profile.html" title="个人资料" target="_blank">个人资料</a></li1>
+        <li1><img id="usernameicon1" src="./icons/signin.png"></li1>
+    </ul>
+</nav>
+<div id="container">
+    <div id="cover">
+        <br>
+        <div id="columns">
+            <figure>
+                <video id="sampleMovie" src="./videos/nanjing.mp4" controls></video>
+                <div>视频介绍</div>
+            </figure>
+            <figure>
+                <img src="./pics/nanjing.jpg" alt>
+                <figcaption>南京</figcaption>
+                <div style="text-align: left">
+                    南京，简称“宁”，古称金陵、建康，是江苏省会、副省级市、特大城市、南京都市圈核心城市，国务院批复确定的中国东部地区重要的中心城市、全国重要的科研教育基地和综合交通枢纽。截至2019年，全市下辖11个区，总面积6587平方千米，建成区面积823平方千米，常住人口850万人，城镇人口707.2万人，城镇化率83.2%。
+                    南京地处中国东部、长江下游、濒江近海，是中国东部战区司令部驻地，地理坐标为北纬31°14″至32°37″，东经118°22″至119°14″，是国务院规划定位的长三角辐射带动中西部地区发展的重要门户城市，也是东部沿海经济带与长江经济带战略交汇的重要节点城市。
+                    南京属宁镇扬丘陵地区，以低山缓岗为主，属北亚热带湿润气候，水域面积达11%以上，是首批国家历史文化名城，中华文明的重要发祥地，长期是中国南方的政治、经济、文化中心。南京早在100-120万年前就有古人类活动，35-60万年前已有南京猿人在汤山生活，有着7000多年文明史、近2600年建城史和近500年的建都史。
+                    南京是国家重要的科教中心，自古以来就是一座崇文重教的城市，有“天下文枢”、“东南第一学”之称，明清中国一半以上的状元均出自南京江南贡院。截至2020年，南京各类高等院校66所，其中111计划高校10所、211高校8所、双一流高校12所、两院院士81人，仅次于北京上海；全球科研城市20强排名，南京位列全球第8、中国第3。
+                    2020年8月，联合国人居署发布亚洲城市百强名单，南京位列亚洲第11，中国大陆第5。
+                </div>
+            </figure>
+        </div>
+    </div>
+    <div id="id">
+        <img id="adver" src="./pics/advertisement.jpg">
+    </div>
+</div>
+</body>
+</html>
